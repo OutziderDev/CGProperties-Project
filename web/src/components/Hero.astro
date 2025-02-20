@@ -1,41 +1,29 @@
 ---
+import House from "../assets/icons/house.astro";
+import Msg from "../assets/icons/msg.astro";
 
 ---
-<section class="p-2 my-6 select-none">
+<section class=" select-none">
   
-  <div class="relative w-full min-[800]: max-w-7xl mx-auto" >
-    <div class="absolute z-0 inset-0 bg-[url('/sala.png')] bg-cover bg-center filter brightness-50 rounded-4xl"></div>
-
-    <!-- Contenido del hero -->
-    <div class="relative py-4 sm:py-16 px-20">
-      <h2 class="text-star text-white font-bold text-2xl md:text-7xl text-balance py-8 w-full">Encuentra Hoy la Propiedad de tus Sueños</h2>
-      <span class="block text-start text-md md:text-2xl text-white/95 max-w-xl my-12">Bienvenido a nuestro portal donde su próximo hogar lo está esperando. Explore nuestro catálogo y descubra la propiedad perfecta para usted</span>
-      <div class="flex justify-start flex-col gap-2 md:flex-row space-x-4 my-10 ">
-        <a class="px-4 py-2 text-xl bg-transparent border text-white rounded-lg hover:scale-110 hover:bg-white/95 hover:text-primary hover:border-white transition-all duration-200" href="/propiedades">Comprar</a>
-        <a class="px-4 py-2 text-xl bg-transparent border text-white rounded-lg hover:scale-110 hover:bg-white/95 hover:text-primary hover:border-white transition-all duration-200" href="/propiedades">Alquiler</a>
-        <a class="px-4 py-2 text-xl bg-transparent border text-white rounded-lg hover:scale-110 hover:bg-white/95 hover:text-primary hover:border-white transition-all duration-200" href="/contactanos">Contáctanos</a>
-      </div>
-    </div>
-    
-    <!-- Card informativa posicionada en la esquina inferior izquierda -->
-    <div class="absolute right-0 bottom-0 max-w-lg">
+  <div class="relative w-full min-h-[600px] mx-auto" >
+    <!-- backgroud filter -->
+    <div class="absolute z-0 inset-0 bg-[url('/sala.png')] bg-cover bg-center filter brightness-40"></div>
+    <!-- Contenido -->
+    <div class="relative flex flex-col max-w-7xl mx-auto p-2">
+      <h1 class="text-center my-14 text-5xl md:text-7xl text-white text-balance font-bold">Cerdeño Global Properties</h1>
       
-      <svg class=" absolute right-4 bottom-2 md:right-5 md:bottom-[13px] scale-110 rotate-y-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.1 43.3">
-        <path d="M 0 0 C 0 5 4 10 10 10 l 52 0 c 7 0 10 5 10 10 l -0 13 c 0.1 5.297 3.1 10.297 10.1 10.297 L 0 43 Z" fill="#F2F2F2"/>
-      </svg>
-
-      <div class="relative text-end bg-transparent p-6">
-        <h1 class="text-xl font-bold text-secondary">Cerdeño Global Properties</h1>
-        <p class="mt-2 text-sm text-secondary text-balance">¡Haz realidad tus sueños con Cerceño Global Properties! 🏡🌍 Te ofrecemos las mejores oportunidades para comprar y vender propiedades, en Panamá.</p>
-        <span class="block mt-4 text-lg font-semibold text-gray-900">+3k de clientes satisfechos</span>
+      <span class=" text-white/90 text-pretty text-center text-3xl">Bienvenido a nuestro portal donde su próximo hogar lo está esperando. Explore nuestro catálogo y descubra la propiedad perfecta para usted</span>
+      
+      <div class="flex justify-center flex-col gap-y-2 gap-x-6 md:flex-row  my-10 ">
+        <a class="px-4 py-2 text-xl bg-white/95 rounded-lg text-primary hover:scale-110 font-bold  transition-all duration-200" href="/propiedades">
+          Propiedades
+          <House class="size-6 inline-block fill-primary"/>
+        </a>
+        <a class="px-4 py-2 text-xl bg-white/95 rounded-lg text-primary hover:scale-110 font-bold  transition-all duration-200" href="/contactanos">
+          Contáctanos
+          <Msg class="size-6 inline-block "/>
+        </a>
       </div>
-
-    </div> 
-
-  </div>
+    </div>  
+  <div/>
 </section>
-
-
-<style>
-
-</style>
