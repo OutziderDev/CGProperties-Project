@@ -1,11 +1,33 @@
 ---
-
+import Logo from '../assets/icons/house.astro'
 ---
 <header>
-  <nav class="bg-primary text-white z-50">
-    <div>
-      <a href="">C.G Properties</a>
-      <div></div>
+  <nav class="bg-white text-secondary z-50 top-0 w-full font-bold select-none ">
+    <div class="flex p-2 container mx-auto items-center justify-between max-w-7xl">
+      
+      <div class="flex items-center border-b-4 border-primary ">
+        <Logo class="size-10 fill-primary"/>
+        <a class="ml-2" href="">C.G Properties</a>
+      </div>
+
+      <!-- Menu MD+ -->
+      <div class="hidden md:flex space-x-4 items-center">
+        <a class="hover:text-primary" href="#">Inicio</a>
+        <a class="hover:text-primary" href="#">Propiedades</a>
+        <a class="hover:text-primary" href="#">Noticias</a>
+        <a class="hover:text-primary" href="#">Equipo</a>
+        <a class="text-white bg-primary rounded-lg px-2 py-1 hover:scale-105 transition-normal" href="#">Contactanos</a>
+      </div>
+
+       <!-- Botón de hamburguesa -->
+       <button class="md:hidden text-primary focus:outline-none cursor-pointer" aria-label="menu" id="menu-btn">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+
+
     </div>
   </nav>
 </header>
