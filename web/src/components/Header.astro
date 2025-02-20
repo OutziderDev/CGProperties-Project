@@ -7,16 +7,16 @@ import Logo from '../assets/icons/house.astro'
       
       <div class="flex items-center border-b-4 border-primary ">
         <Logo class="size-10 fill-primary"/>
-        <a class="ml-2" href="">C.G Properties</a>
+        <a class="ml-2 text-xl" href="/">C.G Properties</a>
       </div>
 
       <!-- Menu MD+ -->
       <div class="hidden md:flex space-x-4 items-center">
-        <a class="hover:text-primary" href="#">Inicio</a>
-        <a class="hover:text-primary" href="#">Propiedades</a>
-        <a class="hover:text-primary" href="#">Noticias</a>
-        <a class="hover:text-primary" href="#">Equipo</a>
-        <a class="text-white bg-primary rounded-lg px-2 py-1 hover:scale-105 transition-normal" href="#">Contactanos</a>
+        <a class="hover:text-primary" href="/">Inicio</a>
+        <a class="hover:text-primary" href="/propiedades">Propiedades</a>
+        <a class="hover:text-primary" href="/noticias">Noticias</a>
+        <a class="hover:text-primary" href="/equipo">Equipo</a>
+        <a class="text-white bg-primary rounded-lg px-2 py-1 hover:scale-110 transition-normal duration-300" href="/contactanos ">Contáctanos </a>
       </div>
 
        <!-- Botón de hamburguesa -->
@@ -26,12 +26,12 @@ import Logo from '../assets/icons/house.astro'
         </svg>
       </button>
 
-      <div class="absolute top-15 p-2 hidden animate-fadeIn space-y-3 bg-primary/85 left-0 w-full h-8/12 shadow-md" id="menu">
-        <a class="text-white block text-center hover:text-secondary" href="#">Inicio</a>
-        <a class="text-white block text-center hover:text-secondary" href="#">Propiedades</a>
-        <a class="text-white block text-center hover:text-secondary" href="#">Noticias</a>
-        <a class="text-white block text-center hover:text-secondary" href="#">Equipo</a>
-        <a class="text-white block text-center bg-primary hover:bg-primary/70 rounded-lg px-2 py-1  transition-normal" href="#">Contactanos</a>
+      <div class="absolute z-50 top-15 p-2 backdrop-blur-sm hidden animate-fadeIn space-y-3 bg-primary/80 left-0 w-full h-8/12 shadow-md" id="menu">
+        <a class="text-white block text-center hover:text-secondary" href="/">Inicio</a>
+        <a class="text-white block text-center hover:text-secondary" href="/propiedades">Propiedades</a>
+        <a class="text-white block text-center hover:text-secondary" href="/noticias">Noticias</a>
+        <a class="text-white block text-center hover:text-secondary" href="/equipo">Equipo</a>
+        <a class="text-white block text-center bg-primary hover:bg-primary/70 rounded-lg px-2 py-1  transition-normal" href="/contactanos ">Contáctanos </a>
       </div>
 
     </div>
