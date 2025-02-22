@@ -16,3 +16,30 @@
   }
 
 }
+
+@layer {
+
+  /* Navegadores basados en WebKit */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F2F2F2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #946b2d9f;
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #946b2d;
+  }
+
+  /* Firefox */
+  body {
+    scrollbar-width: auto;
+    scrollbar-color: #a00 #f1f1f1;
+  }
+}
