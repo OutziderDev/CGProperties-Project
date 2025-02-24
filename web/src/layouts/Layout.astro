@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 const title = "C.G Properties"
 ---
 <!doctype html>
@@ -12,18 +13,9 @@ const title = "C.G Properties"
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-tertiary scroll-smooth">
+	<body class="bg-tertiary scroll-smooth grow">
     <Header/>
 		<slot />
+    <Footer/>
 	</body>
 </html>
-
-<style>
-  body{
-    scrollbar-width: thin;
-	  scrollbar-color: #A00 #ddd;
-  }
-  /* body::-webkit-scrollbar-thumb{
-    background-color: #946b2d;
-  } */
-</style>

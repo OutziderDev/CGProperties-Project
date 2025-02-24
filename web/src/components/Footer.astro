@@ -1,0 +1,75 @@
+---
+import PointmapIcon from "../assets/icons/pointmapIcon.astro"
+import WhastapIcon from "../assets/icons/whatsappIcon.astro"
+import FacebookIcon from "../assets/icons/facebookIcon.astro"
+import InstagramIcon from "../assets/icons/instagramIcon.astro"
+---
+
+<footer class="bg-[#25363e] text-white mx-auto p-2 rounded-t-4xl">
+  <div class="max-w-7xl mx-auto mt-14 flex flex-col md:flex-row  gap-y-10 p-4">
+
+    <div class=" w-full md:w-2/3 select-none">
+      <h2 class="font-bold text-2xl uppercase">C.G. Properties</h2>
+      <p class="mt-6 text-tertiary/90 text-pretty">¡No esperes más para encontrar tu lugar ideal!</p>
+      <p class="mt-2 text-tertiary/90 text-pretty"> Contáctanos hoy y empieza tu viaje hacia la propiedad perfecta.</p>
+
+      <form class="mt-4 w-full">
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="nombre" id="nombre" class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-tertiary appearance-none  focus:outline-none focus:ring-0 focus:border-primary peer" placeholder="" required />
+            <label for="nombre" class="peer-focus:font-medium absolute text-sm text-white/60 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre de Contacto:</label>
+        </div>
+
+        <div class="relative z-0 w-full mb-5 group">
+          <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-tertiary appearance-none  focus:outline-none focus:ring-0 focus:border-primary peer" placeholder="" required />
+          <label for="email" class="peer-focus:font-medium absolute text-sm text-white/60 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-white  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo Electronico:</label>
+        </div>
+        <button class="bg-primary block w-1/2 mx-auto md:-mx-px px-4 py-2 rounded-md cursor-pointer hover:scale-105 ">
+          Enviar
+        </button>
+      </form>  
+      
+    </div>
+
+    <div class="w-full md:w-1/3 text-center flex flex-col">
+      <div class="text-center text-2xl font-bold ">
+        Menu 
+      </div> 
+      <ul class="flex flex-col text-xl items-center justify-center gap-y-3 mt-6">
+        <a class="hover:text-primary" href="/">Inicio</a>
+        <a class="hover:text-primary" href="/propiedades">Propiedades</a>
+        <a class="hover:text-primary" href="/noticias">Noticias</a>
+        <a class="hover:text-primary" href="/equipo">Equipo</a>
+      </ul>
+    </div>
+
+    <div class="w-full md:w-1/3 text-center">
+      <div class="flex gap-2 justify-center text-2xl font-bold items-center">
+        Direccion 
+        <PointmapIcon class="size-6 text-primary"/>
+      </div> 
+      <p class="mt-6">Panamá, Panamá, Ancón </p>
+      <p class="mt-3">sugeily.luz@gmail.com</p>
+    </div>
+
+  </div>
+  
+  <!-- underline -->
+  <div class="block border-t-1 border-primary max-w-7xl p-2 mx-auto mt-8 mb-4">
+    <div class="flex justify-between items-center mt-3">
+      <p class="text-tertiary/80">Copyright ©  2025 por C.G Properties | Todos los derechos reservados</p>
+      <div class="flex gap-4 items-center">
+        <a href="#" target="_blank" class="bg-tertiary p-1 rounded-sm hover:scale-110 transition-all duration-200" rel="noopener noreferrer">
+          <WhastapIcon class="size-6 text-primary"/>
+        </a>
+        <a href="#" target="_blank" class="bg-tertiary p-1 rounded-sm hover:scale-110 transition-all duration-200" rel="noopener noreferrer">
+          <FacebookIcon class="size-6 text-primary"/>
+        </a>
+        <a href="#" target="_blank" class="bg-tertiary p-1 rounded-sm hover:scale-110 transition-all duration-200" rel="noopener noreferrer">
+          <InstagramIcon class="size-6 text-primary"/>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+
+</footer>
