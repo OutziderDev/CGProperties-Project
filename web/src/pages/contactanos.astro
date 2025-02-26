@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import PhoneIcon from '../assets/icons/phoneIcon.astro';
 import EmailIcon from '../assets/icons/msg.astro';
 import PointmapIcon from '../assets/icons/pointmapIcon.astro';
+
+import { getContactInfo } from '../utils/getContactInfo'
+const dataContact = await  getContactInfo()
+const numero ="", direccion ="", correo ="" 
 ---
 
 <Layout>
@@ -15,13 +19,13 @@ import PointmapIcon from '../assets/icons/pointmapIcon.astro';
       <div class="flex items-center flex-col space-y-3">
         <PhoneIcon class="size-18 text-primary"/>
         <h2 class="font-bold">Llámanos</h2>
-        <p class="font-semibold">+507 6029-9955</p>
+        <p class="font-semibold">{numero}</p>
       </div>
 
       <div class="flex items-center flex-col  space-y-3">
         <PointmapIcon class="size-18 text-primary"/>
         <h2 class="font-bold">Encuéntranos</h2>
-        <p class="font-semibold">Panamá, Panamá, Ancón</p>
+        <p class="font-semibold">{direccion}</p>
       </div>
 
       <div class="flex items-center flex-col space-y-3 ">
@@ -29,7 +33,7 @@ import PointmapIcon from '../assets/icons/pointmapIcon.astro';
         <h2 class="font-bold">Envía un Email</h2>
         <div>
           <p class="font-semibold text-center text-secondary/70">Correo Directo</p>
-          <p class="font-semibold">sugeily.luz@gmail.com</p>
+          <p class="font-semibold">{correo}</p>
         </div>
       </div>
 
@@ -38,5 +42,6 @@ import PointmapIcon from '../assets/icons/pointmapIcon.astro';
     <iframe class="w-full h-72 mb-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.127150309649!2d-79.5537866441956!3d8.960429749580182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca8ae50cf0513%3A0xe027052cdd6275c7!2sC.%20Gorgas%2C%20Panam%C3%A1%2C%20Provincia%20de%20Panam%C3%A1!5e0!3m2!1ses-419!2spa!4v1740544725740!5m2!1ses-419!2spa"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
     <p>¿Estás listo para comprar o vender tu propiedad con total confianza? 📞 Contáctanos en Cerceño Global Properties y juntos haremos realidad tus sueños. Escríbenos hoy mismo para recibir asesoría personalizada y descubrir las mejores oportunidades en el mercado. ¡Tu propiedad ideal está a solo un mensaje de distancia! ✨</p>
+  
   </main>
 </Layout>
