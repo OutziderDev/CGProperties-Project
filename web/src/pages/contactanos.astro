@@ -1,7 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PhoneIcon from '../assets/icons/phoneIcon.astro';
+import EmailIcon from '../assets/icons/msg.astro';
+import PointmapIcon from '../assets/icons/pointmapIcon.astro';
 ---
 
 <Layout>
+  <main class="max-w-7xl mx-auto p-2">
+    <h1 class="text-center mt-18 text-4xl font-bold">Contáctanos</h1>
+    <p class="text-center mt-4 text-4xl font-semibold text-secondary/90">¡La casa de tus sueños a un solo paso!</p>
 
+    <div class="flex flex-col md:flex-row justify-between my-20 max-w-4xl mx-auto gap-y-10">
+
+      <div class="flex items-center flex-col space-y-3">
+        <PhoneIcon class="size-18 text-primary"/>
+        <h2 class="font-bold">Llámanos</h2>
+        <p class="font-semibold">+507 6029-9955</p>
+      </div>
+
+      <div class="flex items-center flex-col  space-y-3">
+        <PointmapIcon class="size-18 text-primary"/>
+        <h2 class="font-bold">Encuéntranos</h2>
+        <p class="font-semibold">Panamá, Panamá, Ancón</p>
+      </div>
+
+      <div class="flex items-center flex-col space-y-3 ">
+        <EmailIcon class="size-18 text-primary"/>
+        <h2 class="font-bold">Envía un Email</h2>
+        <div>
+          <p class="font-semibold text-center text-secondary/70">Correo Directo</p>
+          <p class="font-semibold">sugeily.luz@gmail.com</p>
+        </div>
+      </div>
+
+    </div>
+
+    
+  </main>
 </Layout>
