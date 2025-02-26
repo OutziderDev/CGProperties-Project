@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import PhoneIcon from '../assets/icons/phoneIcon.astro';
 import EmailIcon from '../assets/icons/msg.astro';
 import PointmapIcon from '../assets/icons/pointmapIcon.astro';
+import { getContactInfo } from '../utils/getStrapiInfo'
 
-import { getContactInfo } from '../utils/getContactInfo'
 const dataContact = await  getContactInfo()
 
- const numero = dataContact.data.NumeroTelefonico
+const numero = dataContact.data.NumeroTelefonico
 const direccion = dataContact.data.Direccion
 const correo = dataContact.data.CorreoDirecto 
 ---

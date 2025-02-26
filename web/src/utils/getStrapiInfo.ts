@@ -5,3 +5,8 @@ export function getContactInfo() {
     .then(res => { return res }
   )
 }
+
+export function getAboutInfo(){
+  return query("acerca-de-empresa")
+    .then(res => {return res})
+}

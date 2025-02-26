@@ -369,6 +369,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAcercaDeEmpresaAcercaDeEmpresa
+  extends Struct.SingleTypeSchema {
+  collectionName: 'acerca_de_empresas';
+  info: {
+    displayName: 'Acerca_de_Empresa';
+    pluralName: 'acerca-de-empresas';
+    singularName: 'acerca-de-empresa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Descripcion: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::acerca-de-empresa.acerca-de-empresa'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactoContacto extends Struct.SingleTypeSchema {
   collectionName: 'contactos';
   info: {
@@ -406,7 +439,8 @@ export interface ApiContactoContacto extends Struct.SingleTypeSchema {
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
-    displayName: 'home';
+    description: '';
+    displayName: 'inicio';
     pluralName: 'homes';
     singularName: 'home';
   };
@@ -939,6 +973,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::acerca-de-empresa.acerca-de-empresa': ApiAcercaDeEmpresaAcercaDeEmpresa;
       'api::contacto.contacto': ApiContactoContacto;
       'api::home.home': ApiHomeHome;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "acerca_de_empresas",
+  "info": {
+    "singularName": "acerca-de-empresa",
+    "pluralName": "acerca-de-empresas",
+    "displayName": "Acerca_de_Empresa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Descripcion": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}
