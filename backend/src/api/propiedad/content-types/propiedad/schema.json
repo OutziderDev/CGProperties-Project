@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "propiedads",
+  "info": {
+    "singularName": "propiedad",
+    "pluralName": "propiedads",
+    "displayName": "Propiedad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": true
+    },
+    "Direccion": {
+      "type": "text",
+      "required": true
+    },
+    "Precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "Habitaciones": {
+      "type": "integer",
+      "required": true
+    },
+    "Metraje": {
+      "type": "integer",
+      "required": true
+    },
+    "Niveles": {
+      "type": "integer",
+      "required": true
+    },
+    "Servicios": {
+      "type": "integer",
+      "required": true
+    },
+    "FechaConstruccion": {
+      "type": "date",
+      "required": true
+    },
+    "Imagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "categoria_propiedad": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "propiedads"
+    }
+  }
+}

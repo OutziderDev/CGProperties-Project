@@ -23,6 +23,12 @@
       "type": "uid",
       "targetField": "Categoria",
       "required": true
+    },
+    "propiedads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::propiedad.propiedad",
+      "mappedBy": "categoria_propiedad"
     }
   }
 }

@@ -427,6 +427,10 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::categoria.categoria'
     >;
+    propiedads: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::propiedad.propiedad'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'Categoria'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -491,6 +495,52 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPropiedadPropiedad extends Struct.CollectionTypeSchema {
+  collectionName: 'propiedads';
+  info: {
+    description: '';
+    displayName: 'Propiedad';
+    pluralName: 'propiedads';
+    singularName: 'propiedad';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    categoria_propiedad: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::categoria.categoria'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Direccion: Schema.Attribute.Text & Schema.Attribute.Required;
+    FechaConstruccion: Schema.Attribute.Date & Schema.Attribute.Required;
+    Habitaciones: Schema.Attribute.Integer & Schema.Attribute.Required;
+    Imagenes: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::propiedad.propiedad'
+    >;
+    Metraje: Schema.Attribute.Integer & Schema.Attribute.Required;
+    Niveles: Schema.Attribute.Integer & Schema.Attribute.Required;
+    Precio: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Servicios: Schema.Attribute.Integer & Schema.Attribute.Required;
+    Titulo: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1010,6 +1060,7 @@ declare module '@strapi/strapi' {
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::contacto.contacto': ApiContactoContacto;
       'api::home.home': ApiHomeHome;
+      'api::propiedad.propiedad': ApiPropiedadPropiedad;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
