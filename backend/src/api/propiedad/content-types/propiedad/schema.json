@@ -49,18 +49,23 @@
       "required": true
     },
     "Imagenes": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "categoria_propiedad": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::categoria.categoria",
       "inversedBy": "propiedads"
+    },
+    "esVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

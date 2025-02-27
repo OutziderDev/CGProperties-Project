@@ -526,6 +526,9 @@ export interface ApiPropiedadPropiedad extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Direccion: Schema.Attribute.Text & Schema.Attribute.Required;
+    esVisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     FechaConstruccion: Schema.Attribute.Date & Schema.Attribute.Required;
     Habitaciones: Schema.Attribute.Integer & Schema.Attribute.Required;
     Imagenes: Schema.Attribute.Media<'images', true> &
