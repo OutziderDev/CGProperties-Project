@@ -1,0 +1,38 @@
+---
+const { Precio , Titulo, Habitaciones, Metraje, Servicios, Imagenes} = Astro.props.data
+console.log(Imagenes);
+
+---
+  <!-- Imagen grande (ocupa dos filas en la izquierda) -->
+  <div class="relative col-span-1 lg:row-span-2 rounded-xl overflow-hidden ">
+    <img src="sec1.webp" alt="Casa moderna" class="w-full h-full object-cover" />
+    <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-4 rounded-xl shadow hover:scale-110">
+      <h2 class="text-2xl font-bold text-secondary">$ {Precio}</h2>
+      <p class="text-secondary font-bold text-lg">{Titulo}</p>
+      <div class="flex text-gray-600 text-sm mt-2">
+        <span class="mr-4">2,226 Sq. Ft</span>
+        <span class="mr-4">3 Beds</span>
+        <span>2 Baths</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imágenes pequeñas a la derecha -->
+  <div class="grid grid-cols-2 gap-2 md:max-h-[300px]"> 
+    <div class="relative rounded-xl overflow-hidden">
+      <img src="/sec2.webp" alt="Fachada moderna" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative rounded-xl overflow-hidden">
+      <img src="/sec3.webp" alt="Comedor moderno" class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:max-h-[300px] gap-4">
+    <div class="relative  rounded-xl overflow-hidden">
+      <img src="sec4.webp" alt="Interior moderno" class="w-full h-full object-cover" />
+    </div>
+  </div>
+
+  <div class="hidden group-hover:block absolute transition-all duration-100 right-1/2 top-1/2">
+    <p class="text-primary font-bold text-7xl">Descubre Más</p>
+  </div>  

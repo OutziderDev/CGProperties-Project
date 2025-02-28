@@ -1,6 +1,9 @@
 ---
-
+import { getLastPost} from '../utils/getStrapiInfo'
+import MediaItem from '../components/MediaIGallery.astro'
+const dataUltimoPost = await getLastPost()
 ---
+
 <section class="select-none max-w-7xl mx-auto my-32 p-2">
   <article class="flex flex-col md:flex-row p-2  gap-4 items-center">
     <h2 class="font-bold w-full">
@@ -12,35 +15,9 @@
     </p>
   </article>
 
-  <section class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] grid-rows-2 gap-4 p-2 rounded-xl my-14">
-    <!-- Imagen grande (ocupa dos filas en la izquierda) -->
-    <div class="relative col-span-1 lg:row-span-2 rounded-xl overflow-hidden ">
-      <img src="sec1.webp" alt="Casa moderna" class="w-full h-full object-cover" />
-      <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-4 rounded-xl shadow hover:scale-110">
-        <h2 class="text-xl font-bold text-gray-800">$930,000</h2>
-        <p class="text-gray-600 text-sm">789 Lombard Street, San Francisco, CA 94133</p>
-        <div class="flex text-gray-600 text-sm mt-2">
-          <span class="mr-4">2,226 Sq. Ft</span>
-          <span class="mr-4">3 Beds</span>
-          <span>2 Baths</span>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Imágenes pequeñas a la derecha -->
-    <div class="grid grid-cols-2 gap-2 md:max-h-[300px]"> 
-      <div class="relative rounded-xl overflow-hidden">
-        <img src="/sec2.webp" alt="Fachada moderna" class="w-full h-full object-cover" />
-      </div>
-      <div class="relative rounded-xl overflow-hidden">
-        <img src="/sec3.webp" alt="Comedor moderno" class="w-full h-full object-cover" />
-      </div>
-    </div>
-  
-    <div class="grid grid-cols-1 md:max-h-[300px] gap-4">
-      <div class="relative  rounded-xl overflow-hidden">
-        <img src="sec4.webp" alt="Interior moderno" class="w-full h-full object-cover" />
-      </div>
-    </div>
-  </section>
+  <a href="/propiedades" class="hover:grayscale-50 transition duration-300">
+    <section class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] grid-rows-2 gap-4 p-2 rounded-xl my-14 group">
+      <MediaItem data={dataUltimoPost[0]}/>
+    </section>
+  </a>
 </section>

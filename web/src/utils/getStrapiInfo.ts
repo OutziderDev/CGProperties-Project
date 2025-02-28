@@ -18,3 +18,9 @@ export function getUltimateHouses(){
       }
     )
 }
+
+export function getLastPost() {
+  return query("propiedads?fields=Titulo,Precio,Habitaciones,Metraje,Servicios&populate[Imagenes][fields]=url&sort=createdAt:desc&pagination[limit]=1")
+    .then( res => { return res.data})
+  
+}
