@@ -19,6 +19,15 @@ export function getUltimateHouses(){
     )
 }
 
+export function singleHouse(precio : number) {
+  return query(`propiedads?filters[Precio][$eq]=${precio}`)
+  .then(res => { return res.data })
+}
+
+export async function getTotalPropiedades() {
+  return query("propiedads?fields=Precio")
+}
+
 export function getLastPost() {
   return query("propiedads?fields=Titulo,Precio,Habitaciones,Metraje,Servicios&populate[Imagenes][fields]=url&sort=createdAt:desc&pagination[limit]=1")
     .then( res => { return res.data})

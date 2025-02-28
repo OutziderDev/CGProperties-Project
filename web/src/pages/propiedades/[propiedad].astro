@@ -1,0 +1,29 @@
+---
+import { promise } from "astro:schema";
+import Layout from "../../layouts/Layout.astro";
+
+import {getTotalPropiedades, singleHouse } from "../../utils/getStrapiInfo.ts";
+
+export async function getStaticPaths() {
+  const propiedades = await getTotalPropiedades();
+  
+  return propiedades.data.map((propiedad) => ({
+      params: {
+        propiedad: propiedad.Precio,
+      },
+    })) 
+
+} 
+
+// Obtener el parámetro dinámico de la URL
+const { Precio } = Astro.params;
+console.log('conastroparams',Precio);
+
+
+// Buscar el mueble por título
+const dataMueble = await singleHouse(Precio);
+
+---
+<Layout>
+  <h1>hola</h1>
+</Layout>
