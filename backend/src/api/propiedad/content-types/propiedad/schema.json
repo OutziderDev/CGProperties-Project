@@ -66,6 +66,10 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "Descripcion": {
+      "type": "text",
+      "required": true
     }
   }
 }

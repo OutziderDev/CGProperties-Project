@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   
   return propiedades.data.map((propiedad) => ({
         params: {
-          propiedad: propiedad.Precio,
+          propiedad: propiedad.Titulo,
         },
       }
     )
@@ -19,10 +19,9 @@ export async function getStaticPaths() {
 // Obtener el parámetro dinámico de la URL
 const { propiedad } = Astro.params;
 
-
 // Buscar el mueble por título
 const dataPropiedad = await singleHouse(propiedad);
-console.log('conastroparams',dataPropiedad);
+console.log(dataPropiedad);
 
 ---
 <Layout>

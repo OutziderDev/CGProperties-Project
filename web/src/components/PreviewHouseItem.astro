@@ -5,9 +5,10 @@ import TinaIcon from "../assets/icons/tina.astro";
 import PlantasIcon from "../assets/icons/plantas.astro";
 const  STRAPI_URL = import.meta.env.PUBLIC_STRAPI_URL;
 const {Titulo,Precio,Habitaciones,Direccion,Servicios,Metraje,Niveles,Imagenes} = Astro.props.house;
+//const titulolink = Titulo.replace(/\s+/g, '')
 const imagen = STRAPI_URL+Imagenes[2].url;
 ---
-<a href=`/propiedades/${Precio}` class="hover:scale-105 transition-transform duration-300 p-4">
+<a href=`/propiedades/${Titulo}` class="hover:scale-105 transition-transform duration-300 p-4">
   <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
     <img class="w-full h-48 object-cover " src={imagen} alt="">
     <div class="p-2">
