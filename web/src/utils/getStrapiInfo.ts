@@ -17,8 +17,8 @@ export function getUltimateHouses(){
 }
 
 export function singleHouse(nombre : string) {
-  return query(`propiedads?filters[Titulo][$eq]=${nombre}&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios`)
-  .then(res => { return res.data }) 
+  return query(`propiedads?filters[Titulo][$eq]=${nombre}&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios,Descripcion&populate[Imagenes][fields]=url`)
+  .then(res => { return res.data[0] }) 
 }
 
 //console.log('ahora es:', await singleHouse('Costa Verde, La Chorrera'));
