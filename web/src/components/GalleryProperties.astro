@@ -1,0 +1,5 @@
+---
+const Imagenes = Astro.props.Imagenes
+const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
+Imagenes.map( img => img.url= StrapiURL + img.url )
+---
