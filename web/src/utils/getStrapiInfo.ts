@@ -17,7 +17,7 @@ export function getUltimateHouses(){
 }
 
 export function singleHouse(nombre : string) {
-  return query(`propiedads?filters[Titulo][$eq]=${nombre}&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios,Descripcion&populate[Imagenes][fields]=url`)
+  return query(`propiedads?filters[Titulo][$eq]=${nombre}&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios,Descripcion&populate[Imagenes][fields]=name,url,width,height`)
   .then(res => { return res.data[0] }) 
 }
 

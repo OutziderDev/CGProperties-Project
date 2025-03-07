@@ -1,39 +1,53 @@
 ---
 import 'photoswipe/style.css';
-  const Imagenes = Astro.props.Imagenes
-  const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
-  Imagenes.map( img => img.url= StrapiURL + img.url )  
+
+const Imagenes = Astro.props.Imagenes
+const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
 ---
 
-<div id="app">
-  <div class=" grid grid-cols-2 md:grid-cols-4 gap-4" id="my-gallery" >
+<section >
+  <h3 class="text-center font-bold text-4xl text-secondary my-4"> Galeria de Fotos</h3>
+  <div class="relative mb-10 py-5 max-w-7xl mx-auto space-y-5" id="my-gallery" >
     {
       Imagenes.map( img => 
       <a
-      href={img.url}
-      data-pswp-width="1080"
-      data-pswp-height="900"
+      class="absolute rounded-2xl overflow-hidden"
+      href={StrapiURL+ img.url}
+      data-pswp-width={img.width}
+      data-pswp-height={img.height}
       target="_blank"
       >
         <img
-         class="object-cover"
-          src={img.url}
+
+        loading="lazy"
+         class="block"
+          src={StrapiURL+img.url}
           alt=""
         />
       </a>
       )
     }
   </div>
-</div>
+</section>
 
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import MiniMasonry from "minimasonry";
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#my-gallery',
-    children: 'a',
-    pswpModule: () => import('photoswipe'),
-  });
+  document.addEventListener('astro:page-load', () => {
+    new MiniMasonry({
+        container: document.getElementById('my-gallery'),
+        gutter: 20,
+        baseWidth: 300,
+        
+    });
 
-  lightbox.init();
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#my-gallery',
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
+    });
+
+    lightbox.init();
+  })
 </script>
