@@ -9,16 +9,14 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
-
-module.exports = {
-  settings: {
-    cors: {
+  {
+    name: 'strapi::cors',
+    config: {
       enabled: true,
       origin: [
-        'https://cgproperties-project.onrender.com', // tu dominio donde se sirve tu app
-        'https://res.cloudinary.com', // Permitir Cloudinary
+        'https://cgproperties-project.onrender.com', // URL de Strapi en Render
+        'https://res.cloudinary.com', // URL de Cloudinary
       ],
     },
   },
-};
+];
