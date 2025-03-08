@@ -10,3 +10,15 @@ export default [
   'strapi::favicon',
   'strapi::public',
 ];
+
+module.exports = {
+  settings: {
+    cors: {
+      enabled: true,
+      origin: [
+        'https://cgproperties-project.onrender.com', // tu dominio donde se sirve tu app
+        'https://res.cloudinary.com', // Permitir Cloudinary
+      ],
+    },
+  },
+};
