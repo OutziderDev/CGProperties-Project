@@ -1,14 +1,15 @@
 ---
 import GalleryProperties from "../../components/GalleryProperties.astro";
+import DetailsProperties from "../../components/DetailsProperties.astro";
 import Layout from "../../layouts/Layout.astro";
+import PointmapIcon from "../../assets/icons/pointmapIcon.astro";
 import {getTotalPropiedades, singleHouse } from "../../utils/getStrapiInfo.ts";
 const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
-console.log(StrapiURL);
 
 export async function getStaticPaths() {
   const propiedades = await getTotalPropiedades();
   
-  return propiedades.data.map((propiedad) => ({
+  return propiedades.data.map((propiedad: {Titulo : String}) => ({
         params: {
           propiedad: propiedad.Titulo,
         },
@@ -26,16 +27,18 @@ console.log('valores',dataPropiedad);
 
 ---
 <Layout>
-  <main class="mt-20 max-w-7xl mx-auto p-2">
-    <div><!-- Encabezado -->
-      <h1 class="text-6xl text-primary font-bold">{dataPropiedad.Titulo}</h1>
-      <span class="text-3xl text-secondary mt-6">B/.{dataPropiedad.Precio}</span>
-    </div>
+  <main class="mt-20 max-w-6xl mx-6 md:mx-auto mb-10 p-6  bg-white/50 rounded-md border border-primary/50 hover:border-primary/90 transition-all duration-100">
 
+    <div class="w-full"><!-- Encabezado -->
+      <h1 class="text-4xl md:text-6xl text-primary font-bold">{dataPropiedad.Titulo}</h1>
+      <div class="flex flex-col md:flex-row justify-center items-center md:justify-between pb-2 border-b border-primary/50">
+        <p class="text-4xl font-semibold text-secondary mt-5">B/ {Number(dataPropiedad.Precio)}</p>
+        <p class="text-4xl font-semibold text-secondary mt-5 flex items-center justify-center"><span><PointmapIcon class="size-8 text-primary"/></span> {dataPropiedad.Direccion}</p>
+      </div>
+    </div>
+    
     <GalleryProperties Imagenes={dataPropiedad.Imagenes} />
-
-    <div> <!-- Detalles -->
-
-    </div>
+    
+    <DetailsProperties dataPropiedad={dataPropiedad}/>
   </main>
 </Layout>

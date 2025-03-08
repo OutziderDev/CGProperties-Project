@@ -7,20 +7,19 @@ const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
 
 <section >
   <h3 class="text-center font-bold text-4xl text-secondary my-4"> Galeria de Fotos</h3>
-  <div class="relative mb-10 py-5 max-w-7xl mx-auto space-y-5" id="my-gallery" >
+  <div class="mb-10 relative py-5 max-w-7xl mx-auto grid overflow-hidden" id="my-gallery" >
     {
-      Imagenes.map( img => 
+      Imagenes.map( (img: { url: string, width: number, height: number }) => 
       <a
-      class="absolute rounded-2xl overflow-hidden"
+      
+      class="block rounded-2xl absolute"
       href={StrapiURL+ img.url}
       data-pswp-width={img.width}
       data-pswp-height={img.height}
-      target="_blank"
       >
         <img
-
         loading="lazy"
-         class="block"
+         class=" object-cover block rounded-lg"
           src={StrapiURL+img.url}
           alt=""
         />
@@ -35,11 +34,10 @@ const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
   import MiniMasonry from "minimasonry";
 
   document.addEventListener('astro:page-load', () => {
-    new MiniMasonry({
+    const masonry = new MiniMasonry({
         container: document.getElementById('my-gallery'),
-        gutter: 20,
+        gutter: 10,
         baseWidth: 300,
-        
     });
 
     const lightbox = new PhotoSwipeLightbox({
@@ -49,5 +47,7 @@ const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
     });
 
     lightbox.init();
+
+    window.addEventListener('load', () => masonry.layout());
   })
 </script>
