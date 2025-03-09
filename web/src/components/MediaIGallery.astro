@@ -1,7 +1,7 @@
 ---
-const Strapi_URL = import.meta.env.PUBLIC_STRAPI_URL
+//const Strapi_URL = import.meta.env.PUBLIC_STRAPI_URL
 const { Precio , Titulo, Habitaciones, Metraje, Servicios, Imagenes} = Astro.props.data
-Imagenes.map(img => img.url = Strapi_URL + img.url)
+//Imagenes.map(img => img.url = Strapi_URL + img.url)
 ---
   <!-- Imagen grande (ocupa dos filas en la izquierda) -->
   <div class="relative col-span-1 row-span-1 lg:row-span-2 rounded-xl overflow-hidden group-hover:brightness-50 duration-100 transition-all">
