@@ -3,8 +3,7 @@ import { getAboutInfo } from '../utils/getStrapiInfo.ts'
 import { richTextToHtml } from '../utils/richTextToHtml.ts'
 
 const dataAbout = await getAboutInfo()
-const AboutDescripcion = richTextToHtml(dataAbout.data.Descripcion)
-
+const AboutDescripcion = richTextToHtml(dataAbout.data.DescripcionEmpresa)
 ---
 <section class=" max-w-7xl mx-auto my-24 p-2 ">
 

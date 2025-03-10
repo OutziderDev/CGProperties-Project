@@ -16,13 +16,25 @@
     }
   },
   "attributes": {
-    "Descripcion": {
+    "DescripcionEmpresa": {
       "type": "blocks",
       "required": true
     },
     "Mision": {
       "type": "text",
       "required": true
+    },
+    "Servicios": {
+      "displayName": "Servicios",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.servicios"
+    },
+    "ValoresEmpresa": {
+      "displayName": "Valores",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.valores"
     }
   }
 }

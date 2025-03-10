@@ -10,20 +10,35 @@ export interface GeneralListaItem extends Struct.ComponentSchema {
   };
 }
 
-export interface ListaLista extends Struct.ComponentSchema {
-  collectionName: 'components_lista_listas';
+export interface GeneralServicios extends Struct.ComponentSchema {
+  collectionName: 'components_general_servicios';
   info: {
     description: '';
-    displayName: 'Lista';
+    displayName: 'Servicios';
   };
-  attributes: {};
+  attributes: {
+    DescripcionServicio: Schema.Attribute.String;
+  };
+}
+
+export interface GeneralValores extends Struct.ComponentSchema {
+  collectionName: 'components_general_valores';
+  info: {
+    description: '';
+    displayName: 'Valores';
+  };
+  attributes: {
+    DescripcionValor: Schema.Attribute.Text;
+    TituloValor: Schema.Attribute.String;
+  };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'general.lista-item': GeneralListaItem;
-      'lista.lista': ListaLista;
+      'general.servicios': GeneralServicios;
+      'general.valores': GeneralValores;
     }
   }
 }

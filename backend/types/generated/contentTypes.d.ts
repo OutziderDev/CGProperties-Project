@@ -390,7 +390,7 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Descripcion: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    DescripcionEmpresa: Schema.Attribute.Blocks & Schema.Attribute.Required;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -398,9 +398,11 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
     >;
     Mision: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    Servicios: Schema.Attribute.Component<'general.servicios', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ValoresEmpresa: Schema.Attribute.Component<'general.valores', true>;
   };
 }
 

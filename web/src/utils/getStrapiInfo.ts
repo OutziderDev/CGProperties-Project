@@ -7,7 +7,7 @@ export function getContactInfo() {
 }
 
 export function getAboutInfo(){
-  return query("acerca-de-empresa")
+  return query("acerca-de-empresa?populate=*")
     .then(res => {return res})
 }
 

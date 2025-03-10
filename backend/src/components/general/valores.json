@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_valores",
+  "info": {
+    "displayName": "Valores",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TituloValor": {
+      "type": "string"
+    },
+    "DescripcionValor": {
+      "type": "text"
+    }
+  }
+}

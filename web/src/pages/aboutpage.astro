@@ -1,7 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getAboutInfo } from "../utils/getStrapiInfo"
+const dataAbout = await getAboutInfo()
+console.log('about', dataAbout.data);
 
 ---
-<Layout>
+<Layout >
+  <main ><!-- </main>class=" bg-[url('/entrega.png')] bg-no-repeat bg-cover bg-center "> -->
+    <div class=" backdrop-blur-sm h-screen">
+      <div class="max-w-7xl mx-auto p-2">
+        <h1 class=" text-3xl md:text-6xl mt-20 font-bold text-white text-center ">Sobre Nuestra Empresa</h1>
 
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="col-span-2">
+            <h3>Mision:</h3>
+            <p>{dataAbout.data.Mision}</p>
+          </div>
+
+          <div>
+            <h3>Servicios:</h3>
+            <ul>
+              { dataAbout.data.Servicios.map((dato : {DescripcionServicio: String}) => <li>{dato.DescripcionServicio}</li>)}
+            </ul>
+          </div>
+
+          <div>
+            <h3>Valores:</h3>
+            <ul>
+              { dataAbout.data.ValoresEmpresa.map((dato : {TituloValor: String, DescripcionValor: String}) => <li><strong>{dato.TituloValor}:</strong> {dato.DescripcionValor}</li>)}
+            </ul>
+          </div>
+          
+        <div/>
+
+      </div>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  body{
+    background-image: url("/entrega.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+</style>

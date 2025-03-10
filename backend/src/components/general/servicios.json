@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_general_servicios",
+  "info": {
+    "displayName": "Servicios",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "DescripcionServicio": {
+      "type": "string"
+    }
+  }
+}
