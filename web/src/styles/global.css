@@ -4,6 +4,7 @@
   --color-primary: #946b2d;
   --color-secondary: #2E2E2E;
   --color-tertiary: #F2F2F2;
+  --color-extra: #25363e;
   --animate-fadeIn: fadeIn 0.5s ease-in-out;
 
   @keyframes fadeIn {

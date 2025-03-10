@@ -7,30 +7,38 @@ console.log('about', dataAbout.data);
 ---
 <Layout >
   <main ><!-- </main>class=" bg-[url('/entrega.png')] bg-no-repeat bg-cover bg-center "> -->
-    <div class=" backdrop-blur-sm h-screen">
-      <div class="max-w-7xl mx-auto p-2">
-        <h1 class=" text-3xl md:text-6xl mt-20 font-bold text-white text-center ">Sobre Nuestra Empresa</h1>
+    <div class=" backdrop-blur-sm">
+      <div class="max-w-5xl mx-auto p-2">
+        <h1 class=" text-3xl md:text-6xl mt-20 font-bold text-white text-center pb-2 border-b border-white">Sobre Nuestra Empresa</h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="col-span-2">
-            <h3>Mision:</h3>
-            <p>{dataAbout.data.Mision}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-4 mt-10 mb-20">
+
+          <div class="col-span-2 border-b border-white pb-5 mb-10">
+            <h3 class="text-white  font-semibold text-5xl">Mision:</h3>
+            <p class="text-white text-2xl mt-4">{dataAbout.data.Mision}</p>
           </div>
 
-          <div>
-            <h3>Servicios:</h3>
-            <ul>
+          <div class="bg-extra/50 row-start-2 p-6">
+            <h3 class="text-primary brightness-150  font-semibold text-5xl">Servicios:</h3>
+            <ul class="text-white text-xl mt-4 list-disc list-inside">
               { dataAbout.data.Servicios.map((dato : {DescripcionServicio: String}) => <li>{dato.DescripcionServicio}</li>)}
             </ul>
           </div>
 
-          <div>
-            <h3>Valores:</h3>
-            <ul>
-              { dataAbout.data.ValoresEmpresa.map((dato : {TituloValor: String, DescripcionValor: String}) => <li><strong>{dato.TituloValor}:</strong> {dato.DescripcionValor}</li>)}
+          <div class="bg-extra/50 row-start-2 p-6">
+            <h3 class="text-primary brightness-150  font-semibold text-5xl">Valores:</h3>
+            <ul class="text-white text-xl mt-4 list-disc list-inside">
+              { dataAbout.data.ValoresEmpresa.map((dato : {TituloValor: String, DescripcionValor: String}) => <li><strong class="">{dato.TituloValor}:</strong> {dato.DescripcionValor}</li>)}
             </ul>
           </div>
           
+          <div class="bg-extra/50 col-span-2 p-6">
+            <h3 class="text-primary brightness-150 text-center  font-semibold text-5xl">¿Por qué elegir FProperties?</h3>
+            <ul class="text-white text-xl mt-4 list-disc list-inside">
+              { dataAbout.data.ValoresEmpresa.map((dato : {TituloValor: String, DescripcionValor: String},index : Number) => <li>Motivo {index}</li>)}
+            </ul>
+          </div>
+
         <div/>
 
       </div>
