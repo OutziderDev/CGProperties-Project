@@ -4,7 +4,7 @@ const { Precio , Titulo, Habitaciones, Metraje, Servicios, Imagenes} = Astro.pro
 //Imagenes.map(img => img.url = Strapi_URL + img.url)
 ---
   <!-- Imagen grande (ocupa dos filas en la izquierda) -->
-  <div class="relative col-span-1 row-span-1 lg:row-span-2 rounded-xl overflow-hidden group-hover:brightness-50 duration-100 transition-all">
+  <div class="relative col-span-1 max-h-[200px] lg:max-h-[520px] row-span-1 lg:row-span-2 rounded-xl overflow-hidden group-hover:brightness-50 duration-100 transition-all">
     <img src={Imagenes[2].url} alt="Casa moderna" class="w-full h-full object-cover" />
     <div class="absolute bottom-4 left-4 bg-white bg-opacity-80 p-4 rounded-xl shadow">
       <h2 class="text-2xl font-bold text-secondary">$ {Precio}</h2>
@@ -18,7 +18,7 @@ const { Precio , Titulo, Habitaciones, Metraje, Servicios, Imagenes} = Astro.pro
   </div>
 
   <!-- Imágenes pequeñas a la derecha -->
-  <div class="grid grid-cols-2 gap-2 md:max-h-[300px] group-hover:brightness-50 duration-100"> 
+  <div class="grid grid-cols-2 gap-2 md:max-h-[250px] group-hover:brightness-50 duration-100"> 
     <div class="relative rounded-xl overflow-hidden">
       <img src={Imagenes[0].url} alt="Fachada moderna" class="w-full h-full object-cover" />
     </div>
@@ -27,12 +27,12 @@ const { Precio , Titulo, Habitaciones, Metraje, Servicios, Imagenes} = Astro.pro
     </div>
   </div>
 
-  <div class="hidden lg:grid grid-cols-1 md:max-h-[300px] gap-4 group-hover:brightness-50 duration-100">
+  <div class="hidden lg:grid grid-cols-1 md:max-h-[250px] gap-4 group-hover:brightness-50 duration-100">
     <div class="relative  rounded-xl overflow-hidden">
       <img src={Imagenes[3].url} alt="Interior moderno" class="w-full h-full object-cover" />
     </div>
   </div>
 
   <div class="invisible group-hover:visible backdrop-blur-lg  absolute rounded-lg bg-white brightness- p-2 right-1/2 translate-x-1/2 -translate-y-1/2 top-1/2 transition-all duration-75">
-    <p class="text-primary font-bold text-4xl lg:text-8xl text-center">Descubre Más</p>
+    <p class="text-primary font-bold text-4xl p-10 lg:text-6xl text-center">Descubre Más</p>
   </div>  
