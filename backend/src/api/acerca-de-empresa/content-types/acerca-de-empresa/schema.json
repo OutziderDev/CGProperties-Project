@@ -4,7 +4,8 @@
   "info": {
     "singularName": "acerca-de-empresa",
     "pluralName": "acerca-de-empresas",
-    "displayName": "Acerca_de_Empresa"
+    "displayName": "Acerca_de_Empresa",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,6 +18,10 @@
   "attributes": {
     "Descripcion": {
       "type": "blocks",
+      "required": true
+    },
+    "Mision": {
+      "type": "text",
       "required": true
     }
   }

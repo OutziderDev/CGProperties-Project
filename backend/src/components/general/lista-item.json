@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_general_lista_items",
+  "info": {
+    "displayName": "ListaItem"
+  },
+  "options": {},
+  "attributes": {
+    "DescripcionLista": {
+      "type": "string"
+    }
+  }
+}

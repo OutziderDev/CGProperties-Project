@@ -373,6 +373,7 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
   extends Struct.SingleTypeSchema {
   collectionName: 'acerca_de_empresas';
   info: {
+    description: '';
     displayName: 'Acerca_de_Empresa';
     pluralName: 'acerca-de-empresas';
     singularName: 'acerca-de-empresa';
@@ -395,6 +396,7 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
       'oneToMany',
       'api::acerca-de-empresa.acerca-de-empresa'
     >;
+    Mision: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

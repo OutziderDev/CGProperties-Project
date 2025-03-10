@@ -1,8 +1,6 @@
 ---
 import 'photoswipe/style.css';
-
 const Imagenes = Astro.props.Imagenes
-const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
 ---
 
 <section >
@@ -13,14 +11,14 @@ const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
       <a
       
       class="block rounded-2xl absolute"
-      href={StrapiURL+ img.url}
+      href={img.url}
       data-pswp-width={img.width}
       data-pswp-height={img.height}
       >
         <img
         loading="lazy"
          class=" object-cover block rounded-lg"
-          src={StrapiURL+img.url}
+          src={img.url}
           alt=""
         />
       </a>

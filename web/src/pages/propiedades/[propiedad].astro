@@ -4,7 +4,6 @@ import DetailsProperties from "../../components/DetailsProperties.astro";
 import Layout from "../../layouts/Layout.astro";
 import PointmapIcon from "../../assets/icons/pointmapIcon.astro";
 import {getTotalPropiedades, singleHouse } from "../../utils/getStrapiInfo.ts";
-const StrapiURL = import.meta.env.PUBLIC_STRAPI_URL
 
 export async function getStaticPaths() {
   const propiedades = await getTotalPropiedades();
@@ -32,7 +31,7 @@ console.log('valores',dataPropiedad);
     <div class="w-full"><!-- Encabezado -->
       <h1 class="text-4xl md:text-6xl text-primary font-bold">{dataPropiedad.Titulo}</h1>
       <div class="flex flex-col md:flex-row justify-center items-center md:justify-between pb-2 border-b border-primary/50">
-        <p class="text-4xl font-semibold text-secondary mt-5">B/ {Number(dataPropiedad.Precio)}</p>
+        <p class="text-4xl font-semibold text-secondary mt-5">B/. {dataPropiedad.Precio.toLocaleString("en-Us")}</p>
         <p class="text-4xl font-semibold text-secondary mt-5 flex items-center justify-center"><span><PointmapIcon class="size-8 text-primary"/></span> {dataPropiedad.Direccion}</p>
       </div>
     </div>
