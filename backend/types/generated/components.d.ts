@@ -3,10 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface GeneralListaItem extends Struct.ComponentSchema {
   collectionName: 'components_general_lista_items';
   info: {
+    description: '';
     displayName: 'ListaItem';
   };
   attributes: {
-    DescripcionLista: Schema.Attribute.String;
+    DescripcionPreferencia: Schema.Attribute.String;
   };
 }
 

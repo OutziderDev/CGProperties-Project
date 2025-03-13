@@ -1,11 +1,12 @@
 {
   "collectionName": "components_general_lista_items",
   "info": {
-    "displayName": "ListaItem"
+    "displayName": "ListaItem",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "DescripcionLista": {
+    "DescripcionPreferencia": {
       "type": "string"
     }
   }

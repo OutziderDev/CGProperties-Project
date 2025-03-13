@@ -397,6 +397,7 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
       'api::acerca-de-empresa.acerca-de-empresa'
     >;
     Mision: Schema.Attribute.Text & Schema.Attribute.Required;
+    Preferencias: Schema.Attribute.Component<'general.lista-item', true>;
     publishedAt: Schema.Attribute.DateTime;
     Servicios: Schema.Attribute.Component<'general.servicios', true>;
     updatedAt: Schema.Attribute.DateTime;
