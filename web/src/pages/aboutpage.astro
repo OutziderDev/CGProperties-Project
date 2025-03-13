@@ -9,7 +9,7 @@ const dataAbout = await getAboutInfo()
       <div class="max-w-6xl mx-auto bg-extra/70 my-20 p-2">
         <h1 class=" text-3xl md:text-6xl mt-14 font-bold text-white text-center pb-2 border-b border-white">Sobre Nuestra Empresa</h1>
 
-        <div class="grid grid-cols-1 lg:grid-cols-6 mt-10 ">
+        <div class="grid grid-cols-1 lg:grid-cols-6 mt-10 mb-10">
 
           <div class="lg:col-span-4 lg:col-start-2 border-b border-white p-6 mb-10">
             <h3 class="text-primary brightness-150 font-semibold text-5xl">Mision:</h3>
@@ -31,9 +31,9 @@ const dataAbout = await getAboutInfo()
           </div>
 
           <div class="lg:col-span-4 lg:col-start-2 p-6">
-            <h3 class="text-primary brightness-150 text-center  font-semibold text-5xl">¿Por qué elegir FProperties?</h3>
+            <h3 class="text-primary brightness-150 text-center  font-semibold text-5xl">¿Por qué elegir C.G Properties?</h3>
             <ul class="text-white text-xl mt-4 list-disc list-inside">
-              { dataAbout.data.ValoresEmpresa.map((dato : {TituloValor: String, DescripcionValor: String},index : Number) => <li>Motivo {index}</li>)}
+              { dataAbout.data.Preferencias.map((dato : {DescripcionPreferencia: String}) => <li>{dato.DescripcionPreferencia} </li>)}
             </ul>
           </div> 
 
