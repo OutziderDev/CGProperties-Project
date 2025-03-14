@@ -6,10 +6,9 @@ const dataHouses = await getUltimateHouses();
 <section class="max-w-7xl mx-auto p-2 select-none ">
   <h2 class="text-center text-secondary text-4xl md:text-5xl font-bold "> Ultimas Propiedades Ofertadas</h2>
   
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-14">
-    <!-- Elementos de vista -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 mt-14">
     
-    {dataHouses.map((house) => (
+    {dataHouses.map((house : {house: String}) => (
       <PreviewHouseItem house={house} />
     ))}
   

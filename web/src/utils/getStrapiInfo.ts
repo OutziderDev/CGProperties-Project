@@ -12,7 +12,7 @@ export function getAboutInfo(){
 }
 
 export function getUltimateHouses(){
-  return query("propiedads?fields[0]=Titulo&fields[1]=Direccion&fields[2]=Precio&fields[3]=Habitaciones&fields[4]=Servicios&fields[5]=Niveles&fields[6]=Metraje&populate[Imagenes][fields]=url")
+  return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&sort=createdAt:desc&pagination[limit]=4&populate[Imagenes][fields]=url")
     .then(res => { return res.data })
 }
 
