@@ -7,120 +7,150 @@ import TinaIcon from '../assets/icons/tina.astro';
 ---
 
 <Layout>
-  <main>
-    <section class="w-full">
-      <h2 class="text-center mt-20 text-4xl font-bold text-balance p-2">Selecciona el tipo de Propiedad que buscas</h2>
-      
+  <main class="max-w-7xl mx-auto ">
 
-      <div class="flex justify-center items-center text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-        <ul class="flex flex-wrap -mb-px">
+    <section class="p-2">
+      <h2 class="text-center mt-10 text-3xl md:text-5xl font-bold text-balance p-2">
+        Selecciona el tipo de propiedad que deseas
+      </h2>
+    
+      <div class="flex justify-center items-center text-lg font-medium text-center text-gray-500 border-b border-gray-300">
+        <ul class="flex flex-wrap justify-center">
           <li class="me-2">
-            <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+            <button class="tablinks inline-block p-4 text-primary border-b-2 border-primary rounded-t-lg active" data-tab="todas">
               Todas las Propiedades
-            </a>
+            </button>
           </li>
           <li class="me-2">
-            <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+            <button class="tablinks inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="venta">
               Propiedades en Venta
-            </a>
+            </button>
           </li>
           <li class="me-2">
-            <a href="#" class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500" aria-current="page">
+            <button class="tablinks inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="renta">
               Propiedades en Renta
-            </a>
+            </button>
           </li>
-            
         </ul>
       </div>  
-
     </section>
 
-    <section>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
+    <section class="">
+      <!-- Contenido de las pestañas -->
+      <div id="todas" class="tabcontent animate-fadeIn">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
 
-        <a href="#" class="hover:scale-105 transition-transform duration-300 p-6">
-          <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
-            <img class="w-full h-48 object-cover " src="sec3.webp" alt="">
-            <div class="p-2">
-              <p class="font-bold text-3xl text-secondary">Causeway, Balboa</p>
-              <p class="font-semibold text-secondary/80 text-lg"> $52,840</p>
-              <div class="flex gap-2 border-t-2 border-primary mt-2">
-                <!-- flex de iconos -->
-                <div class="flex gap-2 items-center p-4 justify-between w-full">
-    
-                  <div class="flex flex-col  items-center"> 
-                    <CamaIcon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Habs.</p>
-                    <p class="font-bold text-lg text-primary mt-1">4</p>
-                  </div>
-    
-                  <div class="flex flex-col items-center"> 
-                    <TinaIcon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Baños</p>
-                    <p class="font-bold text-lg text-primary mt-1">2</p>
-                  </div>
-    
-                  <div class="flex flex-col items-center"> 
-                    <PlantasIcon class="size-6 text-primary"/>
-                    <p class=" text-secondary/80 text-sm">Niveles</p>
-                    <p class="font-bold text-lg text-primary mt-1">1</p>
-                  </div>
-    
-                  <div class="flex flex-col  items-center"> 
-                    <Mt2Icon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Mt2</p>
-                    <p class="font-bold text-lg text-primary mt-1">1200</p>
-                  </div>
-    
-                </div>     
-    
+          <a href="#" class="hover:scale-105 transition-transform duration-300 p-6">
+            <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
+              <img class="w-full h-48 object-cover " src="sec3.webp" alt="">
+              <div class="p-2">
+                <p class="font-bold text-3xl text-secondary">Causeway, Balboa</p>
+                <p class="font-semibold text-secondary/80 text-lg"> $52,840</p>
+                <div class="flex gap-2 border-t-2 border-primary mt-2">
+                  <!-- flex de iconos -->
+                  <div class="flex gap-2 items-center p-4 justify-between w-full">
+      
+                    <div class="flex flex-col  items-center"> 
+                      <CamaIcon class="w-6 h-6 fill-primary"/>
+                      <p class=" text-secondary/80 text-sm">Habs.</p>
+                      <p class="font-bold text-lg text-primary mt-1">4</p>
+                    </div>
+      
+                    <div class="flex flex-col items-center"> 
+                      <TinaIcon class="w-6 h-6 fill-primary"/>
+                      <p class=" text-secondary/80 text-sm">Baños</p>
+                      <p class="font-bold text-lg text-primary mt-1">2</p>
+                    </div>
+      
+                    <div class="flex flex-col items-center"> 
+                      <PlantasIcon class="size-6 text-primary"/>
+                      <p class=" text-secondary/80 text-sm">Niveles</p>
+                      <p class="font-bold text-lg text-primary mt-1">1</p>
+                    </div>
+      
+                    <div class="flex flex-col  items-center"> 
+                      <Mt2Icon class="w-6 h-6 fill-primary"/>
+                      <p class=" text-secondary/80 text-sm">Mt2</p>
+                      <p class="font-bold text-lg text-primary mt-1">1200</p>
+                    </div>
+      
+                  </div>     
+      
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-
-        <a href="#" class="hover:scale-105 transition-transform duration-300 p-6">
-          <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
-            <img class="w-full h-48 object-cover " src="sec3.webp" alt="">
-            <div class="p-2">
-              <p class="font-bold text-3xl text-secondary">Causeway, Balboa</p>
-              <p class="font-semibold text-secondary/80 text-lg"> $52,840</p>
-              <div class="flex gap-2 border-t-2 border-primary mt-2">
-                <!-- flex de iconos -->
-                <div class="flex gap-2 items-center p-4 justify-between w-full">
-    
-                  <div class="flex flex-col  items-center"> 
-                    <CamaIcon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Habs.</p>
-                    <p class="font-bold text-lg text-primary mt-1">4</p>
-                  </div>
-    
-                  <div class="flex flex-col items-center"> 
-                    <TinaIcon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Baños</p>
-                    <p class="font-bold text-lg text-primary mt-1">2</p>
-                  </div>
-    
-                  <div class="flex flex-col items-center"> 
-                    <PlantasIcon class="size-6 text-primary"/>
-                    <p class=" text-secondary/80 text-sm">Niveles</p>
-                    <p class="font-bold text-lg text-primary mt-1">1</p>
-                  </div>
-    
-                  <div class="flex flex-col  items-center"> 
-                    <Mt2Icon class="w-6 h-6 fill-primary"/>
-                    <p class=" text-secondary/80 text-sm">Mt2</p>
-                    <p class="font-bold text-lg text-primary mt-1">1200</p>
-                  </div>
-    
-                </div>     
-    
-              </div>
-            </div>
-          </div>
-        </a>
-
+          </a>   
+  
+        </div>
       </div>
+
+      <div id="venta" class="tabcontent animate-fadeIn">
+        <h3>Propiedades en Venta</h3>
+        <p>Aquí aparecen solo las propiedades en venta.</p>
+      </div>
+
+      <div id="renta" class="tabcontent animate-fadeIn">
+        <h3>Propiedades en Renta</h3>
+        <p>Aquí aparecen solo las propiedades en renta.</p>
+      </div>
+      
     </section>
+
   </main>
+
 </Layout>
+
+<style>
+  /* Ocultar todos los contenidos de las pestañas por defecto */
+  .tabcontent {
+    display: none;
+    padding: 10px;
+  }
+  
+  /* Animación */
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Estilo para el botón activo */
+  .tablinks.active {
+    border-bottom: 2px solid #2563eb; /* Color azul similar a "text-primary" */
+    color: #2563eb;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabLinks = document.querySelectorAll(".tablinks");
+    const tabContents = document.querySelectorAll(".tabcontent");
+  
+    function openTab(event) {
+      const tabName = event.currentTarget.dataset.tab;
+  
+      // Oculta todos los contenidos
+      tabContents.forEach(tab => (tab.style.display = "none"));
+  
+      // Quita la clase "active" de todos los botones
+      tabLinks.forEach(link => link.classList.remove("active"));
+  
+      // Muestra la pestaña correspondiente
+      document.getElementById(tabName).style.display = "block";
+  
+      // Marca el botón activo
+      event.currentTarget.classList.add("active");
+    }
+  
+    // Agregar eventos a cada botón
+    tabLinks.forEach(button => button.addEventListener("click", openTab));
+  
+    // Mostrar la primera pestaña por defecto
+    if (tabLinks.length > 0) {
+      tabLinks[0].click();
+    }
+  });
+  </script>

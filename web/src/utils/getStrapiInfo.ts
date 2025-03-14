@@ -21,8 +21,6 @@ export function singleHouse(nombre : string) {
   .then(res => { return res.data[0] }) 
 }
 
-//console.log('ahora es:', await singleHouse('Costa Verde, La Chorrera'));
-
 export async function getTotalPropiedades() {
   return query("propiedads?fields=Titulo")
 }
