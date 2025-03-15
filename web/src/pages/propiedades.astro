@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PreviewHouseItem from '../components/PreviewHouseItem.astro'
-import {getAllHouses} from "../utils/getStrapiInfo"
-
+import {getAllHouses, getRentHouses, getSellHouses} from "../utils/getStrapiInfo"
 const AllData = await getAllHouses()
+const RentData = await getRentHouses()
+const SellData = await getSellHouses()
 ---
 
 <Layout>
@@ -47,13 +48,21 @@ const AllData = await getAllHouses()
       </div>
 
       <div id="venta" class="tabcontent animate-fadeIn">
-        <h3>Propiedades en Venta</h3>
-        <p>Aquí aparecen solo las propiedades en venta.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
+          { SellData.map((house : {house: String}) => (
+              <PreviewHouseItem house={house} />
+            ))
+          }
+        </div> 
       </div>
 
       <div id="renta" class="tabcontent animate-fadeIn">
-        <h3>Propiedades en Renta</h3>
-        <p>Aquí aparecen solo las propiedades en renta.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
+          { RentData.map((house : {house: String}) => (
+              <PreviewHouseItem house={house} />
+            ))
+          }
+        </div> 
       </div>
       
     </section>
@@ -81,20 +90,26 @@ const AllData = await getAllHouses()
     const tabLinks = document.querySelectorAll(".tablinks");
     const tabContents = document.querySelectorAll(".tabcontent");
   
-    function openTab(event ) {
-      const tabName = event.currentTarget.dataset.tab;
+    function openTab(event: Event) {
+      const currentTarget = event.currentTarget as HTMLElement | null;
+      if (!currentTarget) return;
+      const tabName = currentTarget.dataset.tab;
   
       // Oculta todos los contenidos
-      tabContents.forEach(tab => (tab.style.display = "none"));
+      tabContents.forEach(tab => ((tab as HTMLElement).style.display = "none"));
   
       // Quita la clase "active" de todos los botones
       tabLinks.forEach(link => link.classList.remove("active"));
   
       // Muestra la pestaña correspondiente
-      document.getElementById(tabName)!.style.display = "block";
+      if (tabName) {
+        document.getElementById(tabName)!.style.display = "block";
+      }
   
       // Marca el botón activo
-      event.currentTarget.classList.add("active");
+      if (event.currentTarget) {
+        (event.currentTarget as HTMLElement).classList.add("active");
+      }
     }
   
     // Agregar eventos a cada botón
@@ -102,7 +117,7 @@ const AllData = await getAllHouses()
   
     // Mostrar la primera pestaña por defecto
     if (tabLinks.length > 0) {
-      tabLinks[0].click();
+      (tabLinks[0] as HTMLElement).click();
     }
   });
   </script>
