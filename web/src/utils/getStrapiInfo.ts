@@ -6,6 +6,11 @@ export function getContactInfo() {
   )
 }
 
+export function getAllHouses() {
+  return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&populate[Imagenes][fields]=url")
+  .then(res => {return res.data})
+}
+
 export function getAboutInfo(){
   return query("acerca-de-empresa?populate=*")
     .then(res => {return res})

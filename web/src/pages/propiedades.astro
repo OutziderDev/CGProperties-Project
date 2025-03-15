@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PlantasIcon from '../assets/icons/plantas.astro';
-import CamaIcon from '../assets/icons/cama.astro';
-import Mt2Icon from '../assets/icons/mt2.astro';
-import TinaIcon from '../assets/icons/tina.astro';
+import Layout from '../layouts/Layout.astro'
+import PreviewHouseItem from '../components/PreviewHouseItem.astro'
+import {getAllHouses} from "../utils/getStrapiInfo"
+
+const AllData = await getAllHouses()
 ---
 
 <Layout>
@@ -17,7 +17,7 @@ import TinaIcon from '../assets/icons/tina.astro';
       <div class="flex justify-center items-center text-lg font-medium text-center text-gray-500 border-b border-gray-300">
         <ul class="flex flex-wrap justify-center">
           <li class="me-2">
-            <button class="tablinks inline-block p-4 text-primary border-b-2 border-primary rounded-t-lg active" data-tab="todas">
+            <button class="tablinks inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 active" data-tab="todas">
               Todas las Propiedades
             </button>
           </li>
@@ -39,48 +39,10 @@ import TinaIcon from '../assets/icons/tina.astro';
       <!-- Contenido de las pestañas -->
       <div id="todas" class="tabcontent animate-fadeIn">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
-
-          <a href="#" class="hover:scale-105 transition-transform duration-300 p-6">
-            <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
-              <img class="w-full h-48 object-cover " src="sec3.webp" alt="">
-              <div class="p-2">
-                <p class="font-bold text-3xl text-secondary">Causeway, Balboa</p>
-                <p class="font-semibold text-secondary/80 text-lg"> $52,840</p>
-                <div class="flex gap-2 border-t-2 border-primary mt-2">
-                  <!-- flex de iconos -->
-                  <div class="flex gap-2 items-center p-4 justify-between w-full">
-      
-                    <div class="flex flex-col  items-center"> 
-                      <CamaIcon class="w-6 h-6 fill-primary"/>
-                      <p class=" text-secondary/80 text-sm">Habs.</p>
-                      <p class="font-bold text-lg text-primary mt-1">4</p>
-                    </div>
-      
-                    <div class="flex flex-col items-center"> 
-                      <TinaIcon class="w-6 h-6 fill-primary"/>
-                      <p class=" text-secondary/80 text-sm">Baños</p>
-                      <p class="font-bold text-lg text-primary mt-1">2</p>
-                    </div>
-      
-                    <div class="flex flex-col items-center"> 
-                      <PlantasIcon class="size-6 text-primary"/>
-                      <p class=" text-secondary/80 text-sm">Niveles</p>
-                      <p class="font-bold text-lg text-primary mt-1">1</p>
-                    </div>
-      
-                    <div class="flex flex-col  items-center"> 
-                      <Mt2Icon class="w-6 h-6 fill-primary"/>
-                      <p class=" text-secondary/80 text-sm">Mt2</p>
-                      <p class="font-bold text-lg text-primary mt-1">1200</p>
-                    </div>
-      
-                  </div>     
-      
-                </div>
-              </div>
-            </div>
-          </a>   
-  
+          {AllData.map((house : {house: String}) => (
+              <PreviewHouseItem house={house} />
+            ))
+          }   
         </div>
       </div>
 
@@ -107,16 +69,6 @@ import TinaIcon from '../assets/icons/tina.astro';
     padding: 10px;
   }
   
-  /* Animación */
-  @keyframes fadeEffect {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
   /* Estilo para el botón activo */
   .tablinks.active {
     border-bottom: 2px solid #2563eb; /* Color azul similar a "text-primary" */
@@ -125,11 +77,11 @@ import TinaIcon from '../assets/icons/tina.astro';
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener('astro:page-load', () => {
     const tabLinks = document.querySelectorAll(".tablinks");
     const tabContents = document.querySelectorAll(".tabcontent");
   
-    function openTab(event) {
+    function openTab(event ) {
       const tabName = event.currentTarget.dataset.tab;
   
       // Oculta todos los contenidos
@@ -139,7 +91,7 @@ import TinaIcon from '../assets/icons/tina.astro';
       tabLinks.forEach(link => link.classList.remove("active"));
   
       // Muestra la pestaña correspondiente
-      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName)!.style.display = "block";
   
       // Marca el botón activo
       event.currentTarget.classList.add("active");
