@@ -5,10 +5,11 @@ import Mt2Icon from "../assets/icons/mt2.astro";
 import TinaIcon from "../assets/icons/tina.astro";
 import PlantasIcon from "../assets/icons/plantas.astro";
 const {Titulo,Precio,Habitaciones,Direccion,Servicios,Metraje,Niveles,Imagenes} = Astro.props.house;
+const load = Astro.props.load;
 ---
 <a href=`/propiedades/${Titulo}` class="hover:scale-105 transition-transform duration-300 p-4">
   <div class=" bg-white  rounded-2xl overflow-hidden space-y-2">
-    <Image  height={320} width={256} class="w-full h-48 object-cover"  src={Imagenes[2].url} alt="" />
+    <Image loading={load}  height={320} width={256} class="w-full h-48 object-cover"  src={Imagenes[2].url} alt="" />
     <div class="p-2">
       <p class="font-bold text-xl text-secondary text-justify">{Titulo}</p>
       <div class="flex justify-between items-center">

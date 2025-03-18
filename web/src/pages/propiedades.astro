@@ -41,7 +41,7 @@ const RentData = AllData.filter((house : {categoria_propiedad: {slug: String}}) 
       <div id="todas" class="tabcontent animate-fadeIn">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
           {AllData.map((house : {house: String}) => (
-              <PreviewHouseItem house={house} />
+              <PreviewHouseItem house={house} load="eager" />
             ))
           }   
         </div>
