@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PreviewHouseItem from '../components/PreviewHouseItem.astro'
-import {getAllHouses, getRentHouses, getSellHouses} from "../utils/getStrapiInfo"
+import {getAllHouses} from "../utils/getStrapiInfo"
 const AllData = await getAllHouses()
-const RentData = await getRentHouses()
-const SellData = await getSellHouses()
+const SellData = AllData.filter((house : {categoria_propiedad: {slug: String}}) => house.categoria_propiedad.slug === 'venta')
+const RentData = AllData.filter((house : {categoria_propiedad: {slug: String}}) => house.categoria_propiedad.slug === 'renta')
 ---
 
 <Layout>
@@ -49,19 +49,19 @@ const SellData = await getSellHouses()
 
       <div id="venta" class="tabcontent animate-fadeIn">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
-          { SellData.map((house : {house: String}) => (
+           { SellData.map((house : {house: String}) => (
               <PreviewHouseItem house={house} />
             ))
-          }
+          } 
         </div> 
       </div>
 
       <div id="renta" class="tabcontent animate-fadeIn">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-6">
-          { RentData.map((house : {house: String}) => (
+           { RentData.map((house : {house: String}) => (
               <PreviewHouseItem house={house} />
             ))
-          }
+          } 
         </div> 
       </div>
       

@@ -7,18 +7,8 @@ export function getContactInfo() {
 }
 
 export function getAllHouses() {
-  return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&populate[Imagenes][fields]=url")
+  return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&populate[Imagenes][fields]=url&populate[categoria_propiedad][fields]=slug")
   .then(res => {return res.data})
-}
-
-export function getRentHouses(){
-  return query(`propiedads?filters[categoria_propiedad][slug][$eq]=renta&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios&populate[Imagenes][fields]=url`)
-  .then(res => { return res.data})
-}
-
-export function getSellHouses(){
-  return query(`propiedads?filters[categoria_propiedad][slug][$eq]=venta&fields=Titulo,Direccion,Precio,Habitaciones,Metraje,Niveles,Servicios&populate[Imagenes][fields]=url`)
-  .then(res => { return res.data})
 }
 
 export function getAboutInfo(){
