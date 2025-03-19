@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agentes",
+  "info": {
+    "singularName": "agente",
+    "pluralName": "agentes",
+    "displayName": "Agente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "NombreAgente": {
+      "type": "string",
+      "required": true
+    },
+    "FotoAgente": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "EmailAgente": {
+      "type": "string",
+      "required": true
+    },
+    "TelefonoAgente": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

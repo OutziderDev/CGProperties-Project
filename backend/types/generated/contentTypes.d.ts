@@ -407,6 +407,37 @@ export interface ApiAcercaDeEmpresaAcercaDeEmpresa
   };
 }
 
+export interface ApiAgenteAgente extends Struct.CollectionTypeSchema {
+  collectionName: 'agentes';
+  info: {
+    displayName: 'Agente';
+    pluralName: 'agentes';
+    singularName: 'agente';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    EmailAgente: Schema.Attribute.String & Schema.Attribute.Required;
+    FotoAgente: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::agente.agente'
+    > &
+      Schema.Attribute.Private;
+    NombreAgente: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    TelefonoAgente: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
   collectionName: 'categorias';
   info: {
@@ -1068,6 +1099,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::acerca-de-empresa.acerca-de-empresa': ApiAcercaDeEmpresaAcercaDeEmpresa;
+      'api::agente.agente': ApiAgenteAgente;
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::contacto.contacto': ApiContactoContacto;
       'api::noticia.noticia': ApiNoticiaNoticia;
