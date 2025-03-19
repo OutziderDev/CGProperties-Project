@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias",
+  "info": {
+    "singularName": "noticia",
+    "pluralName": "noticias",
+    "displayName": "Noticia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "TituloNoticia": {
+      "type": "string",
+      "required": true
+    },
+    "FotoNoticia": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "DescripcionNoticia": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

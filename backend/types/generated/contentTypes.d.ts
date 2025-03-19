@@ -478,6 +478,36 @@ export interface ApiContactoContacto extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNoticiaNoticia extends Struct.CollectionTypeSchema {
+  collectionName: 'noticias';
+  info: {
+    displayName: 'Noticia';
+    pluralName: 'noticias';
+    singularName: 'noticia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DescripcionNoticia: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    FotoNoticia: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::noticia.noticia'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    TituloNoticia: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPropiedadPropiedad extends Struct.CollectionTypeSchema {
   collectionName: 'propiedads';
   info: {
@@ -1040,6 +1070,7 @@ declare module '@strapi/strapi' {
       'api::acerca-de-empresa.acerca-de-empresa': ApiAcercaDeEmpresaAcercaDeEmpresa;
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::contacto.contacto': ApiContactoContacto;
+      'api::noticia.noticia': ApiNoticiaNoticia;
       'api::propiedad.propiedad': ApiPropiedadPropiedad;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
