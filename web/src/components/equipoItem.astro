@@ -1,9 +1,10 @@
 ---
+import Image from "astro/components/Image.astro"
 const agentes = Astro.props.agent
 ---
 <article class="bg-white shadow-md p-6 rounded-md">
   <h2 class="font-semibold text-center text-2xl my-2">{agentes.NombreAgente}</h2>
-  <img src={agentes.FotoAgente.url} class="h-60 w-full" alt="">
+  <Image  src={agentes.FotoAgente.url} class="h-60 w-full object-contain" alt="" loading="eager" height={256} width={256}/>
   <div class="flex justify-between mt-4 items-center">
     <p class="text-secondary font-bold">Correo:</p>
     <p class="text-black text-lg">{agentes.EmailAgente}</p>
