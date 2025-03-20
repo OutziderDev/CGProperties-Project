@@ -1,0 +1,15 @@
+---
+const agentes = Astro.props.agent
+---
+<article class="bg-white shadow-md p-6 rounded-md">
+  <h2 class="font-semibold text-center text-2xl my-2">{agentes.NombreAgente}</h2>
+  <img src={agentes.FotoAgente.url} class="h-60 w-full" alt="">
+  <div class="flex justify-between mt-4 items-center">
+    <p class="text-secondary font-bold">Correo:</p>
+    <p class="text-black text-lg">{agentes.EmailAgente}</p>
+  </div>
+  <div class="flex justify-between mt-2 items-center">
+    <p class="text-secondary font-bold text-lg">Teléfono:</p>
+    <p class="text-black font-bold text-lg">{agentes.TelefonoAgente}</p>
+  </div>
+</article>

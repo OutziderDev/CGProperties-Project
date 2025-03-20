@@ -6,6 +6,11 @@ export function getContactInfo() {
   )
 }
 
+export function getAgents() {
+  return query("agentes?fields=NombreAgente,EmailAgente,TelefonoAgente&populate[FotoAgente][fields]=url")
+  .then(res => { return res.data}  )
+}
+
 export function getAllHouses() {
   return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&populate[Imagenes][fields]=url&populate[categoria_propiedad][fields]=slug")
   .then(res => {return res.data})

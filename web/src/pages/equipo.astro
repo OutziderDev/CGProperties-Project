@@ -1,7 +1,21 @@
 ---
+import {getAgents} from '../utils/getStrapiInfo'
 import Layout from '../layouts/Layout.astro';
+import EquipoItem from '../components/equipoItem.astro'
+const agentsData = await getAgents()
 ---
 
 <Layout>
+  <main class=" max-w-7xl mx-auto mt-20 p-2 ">
+    <h1 class="text-center font-semibold text-3xl md:text-4xl text-balance">Los mejores agentes inmobiliarios de Panamá</h1>
 
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 p-6 ">
+      {
+        agentsData.map((agent : String) => 
+         <EquipoItem agent={agent} />
+        )
+      }
+      
+    </section>
+  </main>
 </Layout>
