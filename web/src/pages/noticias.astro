@@ -22,7 +22,7 @@ const realDate = formatDate(noticeData[0].createdAt)
         <h2 class="font-bold my-2">{noticeData[0].TituloNoticia}</h2>
         <p class="text-secondary/90 italic">por Equipo de Desarrollo</p>
         <img src={noticeData[0].FotoNoticia.url} class="object-cover my-4 h-72 w-full" alt="">
-        <div class="text-pretty mt-3 leading-6 tracking-wide text-balance" set:html={descripNotice}></div>
+        <div class="text-pretty mt-3 leading-6 tracking-wide " set:html={descripNotice}></div>
       </article>
 
   </main>
