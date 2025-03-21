@@ -11,6 +11,11 @@ export function getAgents() {
   .then(res => { return res.data}  )
 }
 
+export function getNotices() {
+  return query("noticias?fields=TituloNoticia,DescripcionNoticia,createdAt&populate[FotoNoticia][fields]=url")
+  .then(res => { return res.data})
+}
+
 export function getAllHouses() {
   return query("propiedads?fields=Titulo,Direccion,Precio,Habitaciones,Servicios,Niveles,Metraje&populate[Imagenes][fields]=url&populate[categoria_propiedad][fields]=slug")
   .then(res => {return res.data})
